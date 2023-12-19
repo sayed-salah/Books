@@ -3,6 +3,7 @@ import 'package:books_app/features/splash/presentation/view/splash_screen.dart';
 import 'package:books_app/local_cubit/local_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,8 +47,9 @@ class BookApp extends StatelessWidget {
             },
             debugShowCheckedModeBanner: false,
             theme: ThemeData.dark().copyWith(
-              scaffoldBackgroundColor: kPrimaryColor,
-            ),
+                scaffoldBackgroundColor: kPrimaryColor,
+                textTheme: GoogleFonts.montserratTextTheme(
+                    ThemeData.dark().textTheme)),
             home: const SplashScreen(),
           );
         },
