@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class SlidingText extends StatelessWidget {
   const SlidingText({
     super.key,
@@ -15,8 +17,8 @@ class SlidingText extends StatelessWidget {
         builder: (context, _) {
           return SlideTransition(
             position: slidingAnimation,
-            child: const Text(
-              'Read Free Books',
+            child: Text(
+              S.of(context).readFreeBook,
               textAlign: TextAlign.center,
             ),
           );
