@@ -1,8 +1,10 @@
 import 'package:books_app/core/fade_route/fade_route.dart';
+import 'package:books_app/core/utils/app_router.dart';
 import 'package:books_app/core/utils/assets.dart';
-import 'package:books_app/features/home/presentation/view/home.dart';
+import 'package:books_app/features/home/presentation/view/home_view.dart';
 import 'package:books_app/features/splash/presentation/view/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashBodyView extends StatefulWidget {
   const SplashBodyView({super.key});
@@ -56,7 +58,7 @@ class _SplashBodyViewState extends State<SplashBodyView>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).push(FadeRoute.create(const HomeView()));
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }

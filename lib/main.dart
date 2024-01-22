@@ -1,8 +1,9 @@
 import 'package:books_app/constants.dart';
+import 'package:books_app/core/utils/app_router.dart';
 import 'package:books_app/features/splash/presentation/view/splash_screen.dart';
 import 'package:books_app/local_cubit/local_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -26,7 +27,8 @@ class BookApp extends StatelessWidget {
       ],
       child: BlocBuilder<LocalCubit, ChangeLocaleState>(
         builder: (context, state) {
-          return MaterialApp(
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
             locale: state.locale,
             supportedLocales: S.delegate.supportedLocales,
             localizationsDelegates: const [
@@ -51,7 +53,7 @@ class BookApp extends StatelessWidget {
               // textTheme: GoogleFonts.montserratTextTheme(
               // ThemeData.dark().textTheme)
             ),
-            home: const SplashScreen(),
+            //  home: const SplashScreen(),
           );
         },
       ),
