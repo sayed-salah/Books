@@ -2,7 +2,6 @@ import 'package:books_app/core/utils/styles.dart';
 import 'package:books_app/features/home/presentation/view/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'best_seller_list_view.dart';
-import 'best_seller_list_view_item.dart';
 import 'feature_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {

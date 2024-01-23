@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:books_app/core/local_cash_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'local_state.dart';
 
@@ -16,7 +16,6 @@ class LocalCubit extends Cubit<ChangeLocaleState> {
 
   Future<void> changeLanguage(String languageCode) async {
     await LanguageCacheHelper().cacheLanguageCode(languageCode);
-    print('language ${languageCode}');
     emit(ChangeLocaleState(locale: Locale(languageCode)));
   }
 }

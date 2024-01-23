@@ -1,17 +1,15 @@
 import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/app_router.dart';
-import 'package:books_app/features/splash/presentation/view/splash_screen.dart';
 import 'package:books_app/local_cubit/local_cubit.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(
-    const BookApp(),
+    DevicePreview(enabled: false, builder: (context) => const BookApp()),
   );
 }
 
@@ -28,6 +26,8 @@ class BookApp extends StatelessWidget {
       child: BlocBuilder<LocalCubit, ChangeLocaleState>(
         builder: (context, state) {
           return MaterialApp.router(
+            //   locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
             routerConfig: AppRouter.router,
             locale: state.locale,
             supportedLocales: S.delegate.supportedLocales,
