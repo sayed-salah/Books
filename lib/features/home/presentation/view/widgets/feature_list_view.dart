@@ -1,4 +1,4 @@
-import 'package:books_app/features/home/presentation/view/widgets/custom_list_view_item.dart';
+import 'package:books_app/features/home/presentation/view/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -17,7 +17,7 @@ class FeaturedBooksListView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: GestureDetector(
                 onTap: () {},
-                child: const FeaturedListViewItem(),
+                child: const CustomBookImage(),
               ),
             );
           }),
