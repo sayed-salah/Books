@@ -28,11 +28,14 @@ class BookApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => LocalCubit()..getSavedLanguage()),
         BlocProvider(
-            create: (context) =>
-                FeaturedBooksCubit(getIt.get<HomeRepoImplementation>())),
+          create: (context) =>
+              FeaturedBooksCubit(getIt.get<HomeRepoImplementation>())
+                ..fetchFeaturedBooks(),
+        ),
         BlocProvider(
             create: (context) =>
-                NewestBooksCubit(getIt.get<HomeRepoImplementation>())),
+                NewestBooksCubit(getIt.get<HomeRepoImplementation>())
+                  ..fetchNewsetBooks()),
       ],
       child: BlocBuilder<LocalCubit, ChangeLocaleState>(
         builder: (context, state) {

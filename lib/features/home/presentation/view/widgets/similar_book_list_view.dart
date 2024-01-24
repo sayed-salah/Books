@@ -17,7 +17,10 @@ class SimilarBookListView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: GestureDetector(
                 onTap: () {},
-                child: const CustomBookImage(),
+                child: const CustomBookImage(
+                  imageUrl:
+                      'http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+                ),
               ),
             );
           }),
